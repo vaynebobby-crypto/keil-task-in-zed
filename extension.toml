@@ -1,0 +1,49 @@
+id = "keil-task-runner"
+name = "Keil Task Runner"
+description = "Run Keil C51/MDK-ARM build, flash, clean, and helper tasks directly from Zed (Windows only)."
+version = "0.1.0"
+schema_version = 1
+authors = ["vaynebobby-crypto"]
+repository = "https://github.com/vaynebobby-crypto/keil-task-in-zed"
+
+[[tasks]]
+label = "Keil: Build"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\keil_task.bat", "build"]
+reveal = "always"
+
+[[tasks]]
+label = "Keil: Rebuild"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\keil_task.bat", "rebuild"]
+reveal = "always"
+
+[[tasks]]
+label = "Keil: Flash"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\keil_task.bat", "flash"]
+reveal = "always"
+
+[[tasks]]
+label = "Keil: Clean"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\keilkilll.bat"]
+reveal = "always"
+
+[[tasks]]
+label = "Keil: Generate clangd config"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\clangd_config.bat"]
+reveal = "always"
+
+[[tasks]]
+label = "Keil: Generate .gitignore"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\gitignore_config.bat"]
+reveal = "always"
+
+[[tasks]]
+label = "Keil: Convert C/H to UTF-8"
+command = "cmd.exe"
+args = ["/c", ".zed\\keil\\keil_utf8conv.bat"]
+reveal = "always"

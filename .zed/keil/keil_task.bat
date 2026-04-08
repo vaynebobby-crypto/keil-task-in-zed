@@ -3,12 +3,12 @@ chcp 65001 > nul
 setlocal
 
 :: --- 配置 ---
-SET KEIL_PATH=D:\Program Files\ARM\MDK5\UV4\UV4.exe
+if not defined KEIL_PATH set "KEIL_PATH=D:\Program Files\ARM\MDK5\UV4\UV4.exe"
 :: --- 配置结束 ---
 
 :: 检查 Keil 路径
 if not exist "%KEIL_PATH%" (
-    echo [ERROR] Keil 程序未在 "%KEIL_PATH%" 找到。请编辑 .zed\keil_task.bat 设置正确路径。
+    echo [ERROR] Keil 程序未在 "%KEIL_PATH%" 找到。请设置 KEIL_PATH 环境变量或编辑 .zed\keil_task.bat 的默认路径。
     exit /b 1
 )
 
